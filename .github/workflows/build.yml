@@ -25,11 +25,11 @@ jobs:
           echo "branch=$(echo $PR | jq -r '.ref')" >> $GITHUB_OUTPUT
           echo "sha=$(echo $PR | jq -r '.sha')" >> $GITHUB_OUTPUT
       - name: Checkout Repo
-        uses: actions/checkout@v3.1.0  # バージョンを最新のものに変更
+        uses: actions/checkout@v3
         with:
           ref: ${{ steps.get_branch.outputs.branch }}
       - name: Use Node.js
-        uses: actions/setup-node@v3.3.0  # バージョンを最新のものに変更
+        uses: actions/setup-node@v3
         with:
           node-version: '20'  # Node.js 20 を指定
 
@@ -93,7 +93,7 @@ jobs:
       - name: Zip artifact for upload
         run: zip ../out.zip . -r
       - name: CI Cache
-        uses: actions/cache@v3.2.0  # バージョンを最新のものに変更
+        uses: actions/cache@v3
         with:
           name: ${{ github.sha }}-${{ github.run_id }}
           path: out.zip

@@ -101,6 +101,6 @@ jobs:
       - name: Webhook
         uses: diverta/workflow-webhook@v2
         env:
-          webhook_url: "https://tk16-site.g.kuroco.app/direct/menu/github/"
-          webhook_secret: "f18dd93f6f057a9960f6f175585ba92f"
-          data: '{"single_zip":"1","domain":"tk16-site.g.kuroco-front.app","pr":"${{ github.event.issue.pull_request.url }}",  "repository":"${{ github.repository }}", "run_id":"${{ github.run_id }}", "hash":"${{ github.sha }}"}'
+        webhook_url: "https://tk16-site.g.kuroco.app/direct/menu/github/"
+        webhook_secret: "f18dd93f6f057a9960f6f175585ba92f"
+        data: '{"single_zip":"1","domain":"tk16-site.g.kuroco-front.app","pr":"${{ github.event.issue.pull_request.url }}",  "repository":"${{ github.repository }}", "run_id":"${{ github.run_id }}", "hash":"${{ github.sha }}"}'

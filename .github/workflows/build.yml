@@ -45,6 +45,8 @@ jobs:
       - name: Install dependencies
         if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}      
         run: npm ci  
+      - name: Ensure out directory exists
+        run: mkdir -p out
       - name: Build
         run: npm run build
       - name: Zip artifact for upload
